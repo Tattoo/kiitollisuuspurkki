@@ -1,0 +1,38 @@
+body {
+  background: #2c4762 url(/img/background.png) top repeat-x; 
+}
+
+#container {
+  padding: 0 30%;
+  text-align: center;
+  color: white;
+
+}
+
+#thanks,
+#submit {
+  border-radius: 10px;
+}
+
+#thanks {
+  width: 96%;
+  height: 10em;
+  border: 5px solid #24292d;
+}
+
+#submit {
+  width: 100%;
+  font-size: 2em;
+  line-height: 2em;
+}
+
+#success,
+#failure {
+  opacity: 0;
+  margin-top: 1em;
+}
+
+.alert {
+  display: inline-block;
+  text-align: center;
+}
