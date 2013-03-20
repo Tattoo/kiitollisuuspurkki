@@ -1,41 +1,23 @@
-doctype 5
-html(lang="en")
-  head
-    title Kiitollisuuspurkki
-    include bootstrap.css
-    include style.css
-    
-    script(src="jquery.js")
-    script(src="bootstrap.js")
-    script
-      $(document).ready(function(){
-        var speed = "slow",
-            fade_in = {
-              "opacity": 1.0
-            },
-            fade_out = {
-              "opacity": 0
-            };
-        $("#submit").click(function(){
-        
-          jQuery.post("/create", function(){
-            $( "#failure" ).animate( fade_out, speed );
-            $( "#success" ).animate( fade_in, speed );
-          }).fail(function(){
-            $( "#success" ).animate( fade_out, speed );
-            $( "#failure" ).animate( fade_in, speed );
-          });
-          
+extends layout
+
+block page_script
+  script
+    $(document).ready(function(){
+      $("#submit").click(function(){
+
+        var $this = $( this );
+        jQuery.post("/create", {
+          "thankyou": $("#thanks").val()
+        }, function(){
+          $this.addClass( "btn-success" ).val( "Saved :)" );
+        }).fail(function(){
+          $this.addClass( "btn-danger" ).val( "Failed D:" );
         });
+
       });
-  body
-    div#container
-      h1 Kiitollisuuspurkki
-      textarea#thanks
-      button#submit submit
-      
-      div#success.alert.alert-success 
-        strong Saved :)
-      br
-      div#failure.alert.alert-error 
-        strong Failed D:
+    });
+
+block content
+  h1 Kiitollisuuspurkki
+  textarea#thanks
+  input(type="submit")#submit.btn.btn-large.btn-primary
