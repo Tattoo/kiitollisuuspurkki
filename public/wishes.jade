@@ -13,5 +13,9 @@ block content
   each thankyou in thanks
     div.well
       p.thank-you= thankyou.thankyou
-      p.time At #{thankyou.date.toLocaleTimeString().split(":").splice(0, 2).join(":")} on #{thankyou.date.toLocaleDateString()}
-      
+      p.time 
+        - if (typeof(thankyou.date) == "string"){
+          = thankyou.date
+        - } else {
+          At #{thankyou.date.toLocaleTimeString().split(":").splice(0, 2).join(":")} on #{thankyou.date.toLocaleDateString()}
+        - }

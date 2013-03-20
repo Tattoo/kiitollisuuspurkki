@@ -9,9 +9,9 @@ block page_script
         jQuery.post("/create", {
           "thankyou": $("#thanks").val()
         }, function(){
-          $this.addClass( "btn-success" ).val( "Saved :)" );
+          $this.addClass( "btn-success" ).val( "Tallennettu :)" );
         }).fail(function(){
-          $this.addClass( "btn-danger" ).val( "Failed D:" );
+          $this.addClass( "btn-danger" ).val( "Epäonnistui D:" );
         });
 
       });
@@ -20,4 +20,4 @@ block page_script
 block content
   h1 Kiitollisuuspurkki
   textarea#thanks
-  input(type="submit")#submit.btn.btn-large.btn-primary
+  input(type="submit", value="Tallenna")#submit.btn.btn-large.btn-primary
