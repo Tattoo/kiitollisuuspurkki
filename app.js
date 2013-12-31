@@ -36,7 +36,7 @@ app.post( "/create", function( req, res ){
 
 app.get( "/view", function( req, res ){
   
-  if ( (new Date()).getYear() < 2013 ) {
+  if ( (new Date()).getYear() < 2012 ) {
     res.render( "thanks.jade", { "thanks": [{
         "thankyou": "<h1>Ei vielä! :)</h1>"
       , "date": "Vasta " + moment().endOf( "year" ).fromNow()
