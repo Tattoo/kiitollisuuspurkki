@@ -3,10 +3,10 @@ extends layout
 block page_script
   script
     $( document ).ready(function(){
-      $( ".thank-you" ).each(function(){
-        var $this = $(this);
-        $this.html( $this.text().replace(/\n/g, "<br />") );
-      });
+    $( ".thank-you" ).each(function(){
+    var $this = $(this);
+    $this.html( $this.text().replace(/\n/g, "<br />") );
+    });
     });
 
 block content
