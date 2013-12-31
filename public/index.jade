@@ -4,7 +4,6 @@ block page_script
   script
     $(document).ready(function(){
     $("#submit").click(function(){
-
     var $this = $( this );
     jQuery.post("/create", {
     "thankyou": $("#thanks").val()
